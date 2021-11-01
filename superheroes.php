@@ -65,8 +65,40 @@ $superheroes = [
 
 ?>
 
+<?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):?>
+<?php $heroQuery = $_POST['query'];
+      $heroName = '';
+      $heroAlias = '';
+      $herobigraphy = '';
+        ?>
+<?php if ($heroQuery === ''):?>
+
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+<?php endif ?>
+
+<?php if ($heroQuery!='')
+    {
+    foreach($superheroes as $superhero)
+    {
+        if ($superhero['alias'] == $heroQuery || $superhero['name'] == $heroQuery)
+        {
+            $heroName = $superhero['name'];
+            $heroAlias = $superhero['alias'];
+            $herobigraphy = $superhero['biography'];
+        };
+    };
+};
+?>
+
+<?php if ($heroName != '' && $heroAlias != '' && $herobigraphy !=''): ?>
+    <h4> <?= $heroName ?> </h4> 
+    <h3> <?= $heroAlias ?> </h3>
+    <p> <?= $herobigraphy ?> </p>
+<?php else: ?>
+    <?='Superhero Not Found'?>
+<?php endif ?>
+<?php endif ?>
