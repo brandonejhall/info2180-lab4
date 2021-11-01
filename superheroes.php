@@ -94,11 +94,11 @@ $superheroes = [
 ?>
 
 <?php if ($heroName != '' && $heroAlias != '' && $herobigraphy !=''): ?>
-    <h4> <?= $heroName ?> </h4> 
     <h3> <?= $heroAlias ?> </h3>
+    <h4> <?= "A.K.A. ".$heroName ?> </h4> 
     <p> <?= $herobigraphy ?> </p>
 <?php elseif ($heroQuery != ''): ?>
-    <?='Superhero Not Found'?>
+    <?='SUPERHERO NOT FOUND'?>
 <?php endif ?>
 <?php endif ?>
 

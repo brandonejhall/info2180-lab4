@@ -10,7 +10,6 @@ window.onload = function(){
     search[0].addEventListener('click',function(event)
         {   
             event.preventDefault();
-            
             let query = document.getElementById("search").value;
             let get_request = new URL(url+query);
             
