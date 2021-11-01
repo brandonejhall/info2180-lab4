@@ -64,9 +64,8 @@ $superheroes = [
 ];
 
 ?>
-
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):?>
-<?php $heroQuery = $_POST['query'];
+<?php if ($_SERVER['REQUEST_METHOD'] === 'GET'):?>
+<?php $heroQuery = $_GET['query'];
       $heroName = '';
       $heroAlias = '';
       $herobigraphy = '';
@@ -98,7 +97,10 @@ $superheroes = [
     <h4> <?= $heroName ?> </h4> 
     <h3> <?= $heroAlias ?> </h3>
     <p> <?= $herobigraphy ?> </p>
-<?php else: ?>
+<?php elseif ($heroQuery != ''): ?>
     <?='Superhero Not Found'?>
 <?php endif ?>
 <?php endif ?>
+
+
+

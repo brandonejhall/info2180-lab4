@@ -3,25 +3,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="styles.css">
     <title>SuperHero Search</title>
 </head>
 <body>
     <header>
-        <div class = "hero_header"><h1>Avenger's Character Search</h1></div>
+        <div class = "header_container">
+            <h1>Avengers Character Search</h1>
         </div>
     </header>
-    <section>
-        <form action="#" method="post">
-            <div class="form-group">
-                <input type="text" name="query" id="query" placeholder="Enter The Hero of Choice">
+    <body>  <form>
+            <input type = "text"  name = "search" id = "search" >
+            <button type= "submit" class = "btn">Search</button>
+            </form>
+            <div class = "results">
             </div>
-        <button type="submit" class="btn">Search</button>
-    </section>
-    <section>
-        <div id = "results">
-        </div>
-    </section>
+    </body>
 </body>
 </html>
